@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/daohang.css" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_2281815_huxa6hewas7.css" />
+		<style type="text/css">
+			header {
+				display: block;
+				overflow: hidden;
+				position: relative;
+				padding-bottom: 2em;
+				border-radius: 8px;
+			}
+
+			.container {
+				width: 320px;
+				margin: 30px auto 1em auto;
+
+
+				border-radius: 8px;
+				padding-bottom: 1.5em;
+				background-color: #353636;
+
+			}
+
+			.bg {
+				border-bottom: 8px solid #1a1a1a;
+				height: 190px;
+				width: 340px;
+				object-fit: cover
+			}
+
+			.bio:hover>.desc {
+				cursor: pointer;
+				opacity: 1;
+			}
+
+			.avatarcontainer {
+				position: absolute;
+				bottom: 12px;
+				right: 0;
+				left: 0;
+				margin: auto;
+				width: 70px;
+				height: 70px;
+				display: block;
+			}
+
+			.avatarcontainer:hover>.hover {
+				opacity: 1;
+			}
+
+			.avatar {
+				width: 100%;
+				height: 95%;
+				object-fit: cover;
+
+
+				border-radius: 50%;
+				overflow: hidden;
+				position: relative;
+				;
+			}
+
+			.avatar img {
+				width: 65px;
+				height: 65px;
+			}
+
+			.avatar:hover+.hover {
+				opacity: 1;
+				cursor: pointer;
+			}
+
+			.hover {
+				position: absolute;
+				cursor: pointer;
+				width: 100%;
+				height: 80%;
+				background: url(./img/logo终稿.png);
+				background-size: 100%;
+				top: 0;
+				font-size: 1.8em;
+				text-align: center;
+				color: white;
+				padding-top: 18%;
+				opacity: 0;
+				font-family: 'FontAwesome';
+				font-weight: 300;
+
+
+				border-radius: 50%;
+
+				transition-property: all;
+
+				transition-duration: 0.5s;
+
+				transition-timing-function: ease;
+			}
+
+			.data {
+				margin-top: .6em;
+				color: #cdd6dc;
+			}
+
+			.data li {
+				width: 32%;
+				text-align: center;
+				display: inline-block;
+				font-size: 1.5em;
+				font-family: 'Lato';
+				border-right: solid 1px #bdc3c7;
+			}
+
+			.data li:last-child {
+				border: none;
+			}
+
+			.data li span {
+				display: block;
+				text-transform: uppercase;
+				font-family: 'Quicksand';
+
+				margin-top: .6em;
+				font-weight: 700;
+			}
+
+			.data li {
+				font-size: 1.4em;
+			}
+
+			.data span {
+				font-size: 0.9em;
+			}
+
+			.desc {
+				position: absolute;
+				top: 0;
+				background-color: rgba(0, 0, 0, 0.6);
+				width: 100%;
+				height: 171px;
+				padding: 1.2em 0em 0px 0em;
+				color: white;
+				text-align: center;
+				opacity: 0;
+
+				transition: all ease-in 0.3s;
+
+			}
+
+			.desc h3 {
+				font-family: "Lato";
+				font-size: 1.2em;
+				margin-bottom: .5em;
+			}
+
+			.desc p {
+				font-size: .9em;
+				font-family: 'Quicksand';
+				line-height: 1.5em;
+			}
+
+			.follow {
+				margin: 1.5em auto 0 auto;
+				background-color: #18f4d3;
+				width: 150px;
+				color: #3d3d3d;
+				font-family: "Lato";
+				text-align: center;
+				padding: .5em;
+
+				border-radius: 5px;
+
+				transition-property: all;
+
+				transition-duration: 0.3s;
+
+				transition-timing-function: ease;
+			}
+
+			.follow:hover {
+				background-color: #15cfb3;
+				cursor: pointer;
+			}
+
+
+
+
+
+			.tabs .selector {
+				height: 100%;
+				display: inline-block;
+				position: absolute;
+				left: 190px;
+				top: 0px;
+				z-index: 1;
+				border-radius: 50px;
+				transition-duration: 0.6s;
+				transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+				background: #09ffb1;
+
+			}
+
+			#zong {
+				width: 50%;
+				margin: 100px 550px;
+			}
+
+			#lunbo {
+				width: 500px;
+				height: 500px;
+
+			}
+
+			#zuozhe {
+				height: 876px;
+				width: 320px;
+				background: #000000;
+				position: absolute;
+				left: 1090px;
+				top: 120px;
+			}
+
+			#zong .h1 {
+				color: #FFFffF;
+				font-size: 30px;
+				text-align: left;
+				margin-top: 10px;
+				width: 500px;
+			}
+
+			#zong .p {
+				color: #c3c3c3;
+				font-size: 10px;
+				margin-top: 0px;
+				margin-left: 0px;
+			}
+
+			#dz {
+				height: 50px;
+				width: 500px;
+				margin-top: 30px;
+			}
+
+			#dz li {
+				list-style: none;
+				float: left;
+				margin-left: 25px;
+				color: #ececec;
+			}
+
+			#dz li:first-child {
+				margin-left: 0px;
+			}
+
+			#fenxiang {
+				width: 500px;
+				height: 50px;
+				margin-top: 20px;
+				border: #FFFFFF 2px solid;
+				border-radius: 50px;
+				color: #FFFFFF;
+			}
+
+			.iconfont {
+				font-size: 15px;
+			}
+
+			.touxiang {
+				border-radius: 50px;
+				overflow: hidden;
+				width: 40px;
+				height: 40px;
+				margin-top: 5px;
+				margin-left: 5px;
+			}
+
+			#p {
+				margin-top: -35px;
+				margin-left: 60px;
+			}
+
+			#pinglun {
+				margin-top: 50px;
+				height: 260px;
+			}
+
+			#pinglun h1 {
+				color: #FFFFFF;
+				font-size: 20px;
+			}
+
+			.pinglun {
+				margin-top: 20px;
+				color: #FFFFFF;
+			}
+
+			.dabao {
+				margin-left: 55px;
+				margin-top: -45px;
+			}
+
+			.time {
+				font-size: 12px;
+				color: #d8d8d8;
+			}
+
+			.neirong {
+				margin-top: 20px;
+				margin-left: 55px;
+				width: 445px;
+				height: 40px;
+				line-height: 40px;
+			}
+
+			.neirongHF {
+				margin-top: 20px;
+				margin-left: 55px;
+				width: 445px;
+				height: 40px;
+				background: #222222;
+				line-height: 40px;
+				font-size: 15px;
+			}
+
+			.hr {
+				border: none;
+				width: 500px;
+				height: 1px;
+				background-color: #6c6c6c;
+				margin-top: 30px;
+			}
+
+			#pinglun2 {
+				width: 500px;
+				height: 10px;
+				background: #FFFDEF;
+				margin-top: 290px;
+			}
+
+			.last {
+				width: 500px;
+				text-align: center;
+				color: royalblue;
+				margin-top: 20px;
+			}
+
+			#images {
+				width: 400px;
+				height: 500px;
+				object-fit: cover;
+				margin-left: 50px;
+			}
+
+			.btn {
+				border-radius: 50px;
+				width: 50px;
+				height: 50px;
+				background: none;
+				border: 2px solid #8f8f8f;
+			}
+
+			.btn:hover {
+				background: #c6c6c6;
+			}
+
+			.btn:hover .iconfont {
+				color: #000000;
+			}
+
+			#btn1 {
+				position: absolute;
+				top: 370px;
+				left: 530px;
+			}
+
+			#btn2 {
+				position: absolute;
+				top: 370px;
+				left: 1020px;
+			}
+
+			.iconfont {
+				color: #7f7f7f;
+			}
+
+			#zuozhe-1 {
+				height: 140px;
+				width: 320px;
+				background: #353636;
+				border: #444444 2px solid;
+				border-radius: 8px;
+			}
+
+			#zuozhe-1 ul {
+				width: 320px;
+			}
+
+			#zuozhe-1 li {
+				float: left;
+				margin-left: 40px;
+				list-style: none;
+				margin-top: 10px;
+			}
+
+			#zuozhe-1 h3 {
+				font-size: 14px;
+				color: #b4b4b4;
+			}
+
+			#zuozhe-1 p {
+				color: #ececec;
+			}
+
+			#biaoqian {
+				margin-top: 10px;
+				width: 300px;
+				height: 240px;
+				background: #353636;
+				padding: 10px;
+				border: #444444 2px solid;
+				border-radius: 8px;
+			}
+
+			.h3 {
+				font-size: 18px;
+				color: #FFFFFF;
+				margin-top: 10px;
+				padding-top: 10px;
+			}
+
+			#zj {
+				width: 300px;
+				margin-left: 10px;
+				font-size: 14px;
+				margin-top: 10px;
+			}
+
+			#zj li {
+				list-style: none;
+				float: left;
+				background-color: #222222;
+				padding: 10px;
+				border-radius: 50px;
+				margin: 5px;
+				font: bolder;
+				color: #FFFFFF;
+			}
+
+			#zj li:hover {
+				background: #acacac;
+			}
+
+			.pubu {
+				width: 300px;
+				-moz-column-count: 2;
+				-webkit-column-count: 2;
+				column-count: 2;
+
+				-webkit-column-gap: 1px;
+				column-gap: 1px;
+
+				margin: 10px 0px;
+				margin: 5px;
+			}
+
+			#pubu div {
+				margin-top: -20px;
+			}
+
+			#pubu div:hover {
+				opacity: 0.9;
+			}
+
+			#pubu div:hover .pp {
+				animation: pp 0.5s ease both
+			}
+
+			#pubu #diyi {
+				margin-top: 0px;
+			}
+
+			#touxiang {
+				border-radius: 50px;
+				width: 20px;
+				height: 20px;
+			}
+
+			.pp {
+				background: linear-gradient(to top, rgba(26, 26, 26, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+				width: 140px;
+				margin-left: 0px;
+				opacity: 0;
+				height: 50px;
+				line-height: 50px;
+			}
+
+			.pp p {
+				margin-top: -55px;
+				margin-left: 30px;
+				color: #FFFFFF;
+				font-size: 10px;
+			}
+
+			#like {
+				width: 320px;
+				height: 500px;
+				background: #353636;
+				overflow: auto;
+				margin-top: 20px;
+				overflow-x: hidden;
+				border: #444444 2px solid;
+				border-radius: 8px;
+			}
+
+			#like h3 {
+				margin-left: 5px;
+			}
+
+			@keyframes pp {
+				0% {
+					opacity: 0;
+					-webkit-transform: translateY(0px);
+				}
+
+				1% {
+					opacity: 0;
+					-webkit-transform: translateY(-34px);
+				}
+
+				100% {
+					-webkit-transform: translateY(-34px);
+					opacity: 1;
+				}
+			}
+
+			#fanhui {
+				font-size: 50px;
+				position: absolute;
+				top: 155px;
+				left: 300px;
+				color: #b5b5b5;
+				border-radius: 50px;
+				border: #d4d4d4 3px solid;
+				width: 60px;
+				height: 60px;
+				text-align: center;
+				line-height: 55px;
+			}
+
+			#fanhui a {
+				color: #fff;
+				text-decoration: none;
+				display: block;
+
+
+				;
+			}
+
+			#like::-webkit-scrollbar {
+				width: 9px;
+			}
+
+			#like::-webkit-scrollbar-track {
+				background-color: rgba(56, 56, 56, 0.7);
+				width: 100%;
+			}
+
+			#like::-webkit-scrollbar-thumb {
+				background-color: rgba(39, 39, 39, 1.0);
+				transition: background-color 0.2s;
+			}
+
+			#like::-webkit-scrollbar-thumb:hover {
+				background-color: black;
+			}
+
+			.container {
+				margin-left: 200px;
+				opacity: 0;
+			}
+
+			#biaoqian {
+				margin-left: 240px;
+				opacity: 0;
+			}
+
+			#like {
+				margin-left: 220px;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+
+			<a><img></a>
+			<div class="wrapper">
+				<nav class="tabs" id="topNew">
+					<div class="selector"></div>
+					<a onclick="window.location = 'index.html' " , href:"###"><i class="fab fa-superpowers"></i>Circle首页</a>
+					<a onclick="window.location = 'circleshequ.html' " , href:"###" class="active"><i class="fas fa-hand-rock"></i>Circle社区</a>
+					<a onclick="window.location = 'shop.html' " , href:"###"><i class="fas fa-bolt"></i>Circle商城</a>
+					<a onclick="window.location = 'circleTv.html' " , href:"###"><i class="fas fa-burn"></i>Circle Tv</a>
+					<a onclick="window.location = 'gywm.html' " , href:"###"><i class="fas fa-burn"></i>关于我们</a>
+				</nav>
+			</div>
+		</header>
+		<div id="zong">
+			<div id="lunbo">
+				<div id="changeImg">
+					<img id="images" src="img/2.jpg" width="500px" />
+				</div>
+				<div>
+					<button id="btn1" class="btn" type="button" onclick="changeImg('pre')"><i class="iconfont">&#xe612;</i></button>
+					<button id="btn2" class="btn" type="button" onclick="changeImg('next')" /><i class="iconfont">&#xe611;</i></button>
+
+				</div>
+			</div>
+
+			<div id="zuozhe">
+				<div class="container">
+					<header>
+						<div class="bio">
+							<img src="img/13.jpg" alt="background" class="bg">
+							<div class="desc">
+								<h3>@水冰月</h3>
+								<p>喜欢赛博朋克和滑板，快来和我交个朋友吧！</p>
+							</div>
+						</div>
+
+						<div class="avatarcontainer">
+							<img src="img/11.jpg" alt="avatar" class="avatar">
+							<div class="hover">
+								<div class="icon-twitter"></div>
+							</div>
+						</div>
+
+
+					</header>
+
+					<div class="content">
+						<div class="data">
+							<ul>
+								<li>
+									2,934
+									<span>点赞</span>
+								</li>
+								<li>
+									1,119
+									<span>关注</span>
+								</li>
+								<li>
+									530
+									<span>动态</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="follow">
+							<div class="icon-twitter"></div> Follow
+						</div>
+					</div>
+
+				</div>
+				<div id="biaoqian">
+					<h3 class="h3">相关潮圈</h3>
+					<hr class="hr" style="width: 300px;margin-left: 0px;" />
+					<ul id="zj">
+						<li>赛博朋克</li>
+						<li>滑板</li>
+						<li>街舞</li>
+						<li>蒸汽波</li>
+						<li>草莓音乐节</li>
+						<li>美妆大赛</li>
+						<li>爬宠</li>
+						<li>Lolita</li>
+						<li>说唱</li>
+						<li>美妆大赛</li>
+						<li>爬宠</li>
+
+					</ul>
+				</div>
+				<div id="like">
+					<h3 class="h3">猜你喜欢</h3>
+					<div id="pubu" class="pubu">
+						<div id="diyi">
+
+							<img src="img/8.jpg" width="140px">
+							<div class="pp"><img id="touxiang" src="img/11.jpg">
+								<p>Drown </p>
+							</div>
+						</div>
+
+
+						<div>
+
+							<img src="img/2.jpg" width="140px">
+							<div class="pp"><img id="touxiang" src="img/11.jpg">
+								<p>Drown </p>
+							</div>
+						</div>
+
+						<div>
+							<img src="img/17.jpg" width="140px">
+							<div class="pp"><img id="touxiang" src="img/11.jpg">
+								<p>Drown </p>
+							</div>
+
+						</div>
+
+						<div>
+							<img src="img/4.jpg" width="140px">
+							<div class="pp"><img id="touxiang" src="img/11.jpg">
+								<p>Drown </p>
+							</div>
+						</div>
+
+						<div>
+							<img src="img/5.jpg" width="140px">
+							<div class="pp"><img id="touxiang" src="img/11.jpg">
+								<p>Drown </p>
+							</div>
+						</div>
+
+						<div>
+							<img src="img/6.jpg" width="140px">
+							< <div class="pp"><img id="touxiang" src="img/11.jpg">
+								<p>Drown </p>
+						</div>
+					</div>
+
+					<div>
+						<img src="img/7.jpg" width="140px">
+						<div class="pp"><img id="touxiang" src="img/11.jpg">
+							<p>Drown </p>
+						</div>
+					</div>
+					<div>
+						<img src="img/13.jpg" width="140px">
+						<div class="pp"><img id="touxiang" src="img/11.jpg">
+							<p>Drown </p>
+						</div>
+					</div>
+					<div>
+						<img src="img/10.jpg" width="140px">
+						<div class="pp"><img id="touxiang" src="img/11.jpg">
+							<p>Drown </p>
+						</div>
+					</div>
+					<div>
+						<img src="img/11.jpg" width="140px">
+						<div class="pp"><img id="touxiang" src="img/11.jpg">
+							<p>Drown </p>
+						</div>
+					</div>
+					<div>
+						<img src="img/12.jpg" width="140px">
+						<div class="pp"><img id="touxiang" src="img/11.jpg">
+							<p>Drown </p>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+		<h1 class="h1">今年第一份礼物</h1>
+
+		<ul id="dz">
+			<li><i class="iconfont">&#xe60f;&nbsp; 50</i></li>
+			<li><i class="iconfont">&#xe702;&nbsp;65</i></li>
+			<li><i class="iconfont">&#xe702;&nbsp;100</i></li>
+
+		</ul>
+		<p class="p">发布与2021年1月6日0:12</p>
+		<div id="fenxiang">
+			<img class="touxiang" src="img/11.jpg">
+			<p id="p">Drown&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;一起分享给朋友看看吧&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		</div>
+		<div id="pinglun">
+			<h1>评论</h1>
+			<div class="pinglun"><img class="touxiang" src="img/8.jpg">
+				<div class="dabao">
+					<p class="name">Drown&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+						&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+						&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+						&nbsp;&nbsp; <i class="iconfont">&#xe702;</i>&nbsp;回复</p>
+
+					<p class="time">今天18：56</p>
+				</div>
+				<p class="neirong">太酷了，i了i了</p>
+				<p class="neirongHF">&nbsp; &nbsp; Drown（作者）：嘻嘻，谢谢！</p>
+
+			</div>
+			<hr class="hr">
+		</div>
+
+		<div class="pinglun"><img class="touxiang" src="img/2.jpg">
+			<div class="dabao">
+				<p class="name">Drown&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; <i class="iconfont">&#xe702;</i>&nbsp;回复</p>
+				<p class="time">今天18：56</p>
+			</div>
+			<p class="neirong">太酷了，i了i了</p>
+			<p class="neirongHF">&nbsp; &nbsp; Drown（作者）：嘻嘻，谢谢！</p>
+		</div>
+		<hr class="hr">
+
+
+
+
+		<div class="pinglun"><img class="touxiang" src="img/4.jpg">
+			<div class="dabao">
+				<p class="name">Drown&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; <i class="iconfont">&#xe702;</i>&nbsp;回复</p>
+				<p class="time">今天18：56</p>
+			</div>
+			<p class="neirong">太酷了，i了i了</p>
+			<p class="neirongHF">&nbsp; &nbsp; Drown（作者）：嘻嘻，谢谢！</p>
+		</div>
+		<hr class="hr">
+
+
+		<div class="pinglun"><img class="touxiang" src="img/7.jpg">
+			<div class="dabao">
+				<p class="name">Drown&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; <i class="iconfont">&#xe702;</i>&nbsp;回复</p>
+				<p class="time">今天18：56</p>
+			</div>
+			<p class="neirong">太酷了，i了i了</p>
+			<p class="neirongHF">&nbsp; &nbsp; Drown（作者）：嘻嘻，谢谢！</p>
+		</div>
+		<hr class="hr">
+
+
+		<div class="pinglun"><img class="touxiang" src="img/5.jpg">
+			<div class="dabao">
+				<p class="name">Drown&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+					&nbsp;&nbsp; <i class="iconfont">&#xe702;</i>&nbsp;回复</p>
+				<p class="time">今天18：56</p>
+			</div>
+			<p class="neirong">太酷了，i了i了</p>
+			<p class="neirongHF">&nbsp; &nbsp; Drown（作者）：嘻嘻，谢谢！</p>
+		</div>
+		<hr class="hr">
+
+
+		<p class="last">查看更多评论</p>
+
+		<p id="fanhui"><a href="circleshequ.html">
+				< </a> </p> </div> <script src="js/jquery-3.5.1.min.js">
+					</script>
+					<script type="text/javascript">
+						$(document).ready(
+
+							function iniciar() {
+								$('.follow').on("click", function() {
+									$('.follow').css('background-color', '#00ffaa');
+									$('.follow').html('<div class="icon-ok"></div> Following');
+								});
+							}
+
+						);
+
+
+
+
+						var now = 1;
+
+						function changeImg(which) {
+
+							var img = document.getElementById("images");
+							if (which == 'pre') {
+								now--;
+								if (now < 1) {
+
+									now = 8;
+									img.src = "img/" + now + ".jpg"
+								}
+								img.src = "img/" + now + ".jpg";
+
+
+							} else {
+
+								now++;
+								if (now > 8) {
+									now = 1;
+									img.src = "img/" + now + ".jpg";
+								}
+								img.src = "img/" + now + ".jpg";
+
+							}
+
+
+						}
+						$('.container').animate({
+							marginLeft: "0px",
+							opacity: "1"
+						}, 800, function() {
+
+						});
+						$('#biaoqian').animate({
+							marginLeft: "0px",
+							opacity: "1"
+						}, 1000)
+						$('#like').animate({
+							marginLeft: "0px",
+							opacity: "1"
+						}, 800)
+					</script>
+
+
+
+
+					</div>
+					</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<script src="js/jquery-3.5.1.min.js"></script>
+					<script>
+						var tabs = $('.tabs');
+						var selector = $('.tabs').find('a').length;
+						//var selector = $(".tabs").find(".selector");
+						var activeItem = tabs.find('.active');
+						var activeWidth = activeItem.innerWidth();
+						$(".selector").css({
+							"left": activeItem.position.left + "px",
+							"width": activeWidth + "px"
+						});
+
+						$(".tabs").on("mouseover", "a", function(e) {
+							e.preventDefault();
+							$('.tabs a').removeClass("active");
+							$(this).addClass('active');
+							var activeWidth = $(this).innerWidth();
+							var itemPos = $(this).position();
+							$(".selector").css({
+								"left": itemPos.left + "px",
+								"width": activeWidth + "px"
+							});
+						});
+					</script>
+	</body>
+
+</html>

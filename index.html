@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/daohang.css" />
+		<script>
+			window.onload = function () {
+
+				}
+		</script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0
+			}
+
+			body {
+				background-color: #000000;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+
+			html {
+				scroll-behavior: smooth
+			}
+
+			#shopimg {
+				display: none;
+			}
+
+			#h11 {
+				display: none;
+			}
+
+			#h12 {
+				display: none;
+			}
+
+			#h13 {
+				display: none;
+			}
+
+			#btnhua {
+				display: none;
+			}
+
+			#li1 {
+				display: none;
+			}
+
+			#li2 {
+				display: none;
+			}
+
+			#zhezhao2 {
+				width: 1920px;
+				height: 940px;
+				background-color: #000000;
+				position: absolute;
+				z-index: 3;
+				top: 500px;
+				opacity: 0.9;
+			}
+
+			#font {
+				color: white;
+				height: 250px;
+				width: 100vw;
+			}
+
+			#font h1 {
+				width: 100vw;
+				margin-top: 230px;
+				font-size: 50px;
+				text-align: center;
+				margin-left: 400px;
+				-webkit-animation: fontH1 3.5s both;
+			}
+
+			#zhezhao {
+				width: 800px;
+				height: 100px;
+				position: relative;
+				left: 950px;
+				top: -90px;
+				background-color: #000000;
+				z-index: 1;
+				-webkit-animation: zhezhao 3.5s both;
+			}
+
+			#zhezhao3 {
+				width: 1920px;
+				height: 945px;
+				background-color: #000000;
+				position: absolute;
+				z-index: 3;
+				top: 1465px;
+				opacity: 0.9;
+			}
+
+			#vidioDiv {
+				height: 755px;
+				border: #000000 1px solid;
+				width: 100vw;
+				margin-top: 20px;
+			}
+
+			#vidioDiv p {
+				text-align: center;
+			}
+
+			#vidioDiv img {
+				width: 1520px;
+				border: #000000 1px solid;
+				margin: 200px auto 0px;
+			}
+
+			#designDraft {
+				height: 1400px;
+				width: 100vw;
+				border: #000000 1px solid;
+				color: #FFFFFF;
+				margin-top: -600px;
+				background: url(img/001.png);
+				background-size: 80%;
+				opacity: 0;
+				transition: 1s ease-in;
+				background-repeat: no-repeat;
+			}
+
+			#designDraft h1 {
+				text-align: center;
+				margin-left: 1400px;
+				width: 500px;
+				height: 50px;
+			}
+
+			#designDraft button {
+				font-size: 20px;
+				width: 10%;
+				margin-top: 2%;
+			}
+
+			#circleshequ {
+				margin-top: 20%;
+			}
+
+			#one {
+				width: 100%;
+				height: 1800px;
+				border: #000000 1px solid;
+				color: #FFFFFF;
+			}
+
+			.one-1 {
+				margin-top: 200px;
+			}
+
+			.one-1 h1 {
+				font-size: 90px;
+				line-height: 85px;
+				margin-top: 200px;
+				text-align: center;
+			}
+
+			.one-1 h2 {
+				font-size: 70px;
+				line-height: 85px;
+				margin: 200px auto 0;
+				text-align: left;
+				width: 700px;
+			}
+
+			.one-1 h1 button {
+				width: 300px;
+				height: 50px;
+			}
+
+			#one h2 {
+				font-size: 20px;
+				width: 960px;
+				margin: 200px auto;
+			}
+
+			.one-1 ul {
+				margin-top: 50px;
+				font-size: 20px;
+			}
+
+			.one-1 li {
+				float: left;
+				width: 350px;
+				list-style: none;
+				margin-left: 25px;
+			}
+
+			#one img {
+				width: 1344px;
+				position: relative;
+				left: 15%;
+				top: 5%;
+				border: #000000 1px solid;
+				margin: 0 auto;
+			}
+
+			.one-1 {
+				margin: 0 auto;
+				border: #000000 1px solid;
+				height: 680px;
+				width: 800px;
+				color: #FFFFFF;
+			}
+
+			.one-1 p {
+				width: 700px;
+				margin: 20px auto;
+			}
+
+			#banner {
+				width: 100%;
+				height: 600px;
+				background-color: #FFFFFF;
+			}
+
+			#vidioMore {
+				height: 800px;
+				width: 100vw;
+				color: #FFFFFF;
+			}
+
+			#vidioMore h1 {
+				text-align: center;
+				font-size: 60px;
+				margin: 200px auto 100px;
+			}
+
+			#vidioMore ul {
+				width: 1600px;
+				height: 800px;
+				margin: 0 auto;
+			}
+
+			#vidioMore li {
+				list-style: none;
+				width: 500px;
+				height: 500px;
+				border: #000000 1px solid;
+				float: left;
+				margin-left: 1%;
+			}
+
+			#img2 {
+				width: 680px;
+				position: relative;
+				top: -650px;
+				left: 570px;
+			}
+
+			#shopH1 {
+				display: none;
+			}
+
+			#dibu2 {
+				width: 1920px;
+				color: #e3e3e3;
+				margin-top: 150px;
+				text-align: center;
+				color: #c7c7c7;
+				margin-bottom: 100px;
+				font-size: 20px;
+			}
+
+			.wrapper {
+				text-align: center;
+
+				#span2div {
+					height: 52px;
+					width: 940px;
+				}
+
+				position: fixed;
+				left: 530px;
+				top: 21px;
+				z-index: 999;
+			}
+
+			@keyframes img {
+				0% {
+					-webkit-transform: scale(1) translateY(0px);
+				}
+
+				100% {
+					-webkit-transform: scale(1.2)translateY(-70px);
+				}
+			}
+
+			@keyframes topNew {
+				0% {
+					transform: translateY(0px);
+				}
+
+				80% {
+					transform: translateY(0px);
+				}
+
+				100% {
+					transform: translateY(-100px);
+				}
+			}
+
+			@keyframes topNew2 {
+				0% {
+					transform: translateY(-100px);
+				}
+
+
+				100% {
+					transform: translateY(0px);
+				}
+			}
+
+
+
+
+
+			@keyframes zhezhao {
+				0% {
+					-webkit-transform: translateX(0px);
+					border-left: #000000 1px solid;
+				}
+
+				10% {
+					-webkit-transform: translateX(0px);
+					border-left: #000000 1px solid;
+				}
+
+				20% {
+					-webkit-transform: translateX(100px);
+					border-left: #FFFFFF 1px solid;
+				}
+
+				30% {
+					-webkit-transform: translateX(150px);
+					border-left: #000000 1px solid;
+				}
+
+				40% {
+					-webkit-transform: translateX(200px);
+					border-left: #ffffff 1px solid;
+				}
+
+				50% {
+					-webkit-transform: translateX(250px);
+					border-left: #000000 1px solid;
+				}
+
+				60% {
+					-webkit-transform: translateX(300px);
+					border-left: #ffffff 1px solid;
+				}
+
+				70% {
+					-webkit-transform: translateX(350px);
+					border-left: #000000 1px solid;
+				}
+
+				80% {
+					-webkit-transform: translateX(400px);
+					border-left: #ffffff 1px solid;
+				}
+
+				90% {
+					-webkit-transform: translateX(450px);
+					border-left: #000000 1px solid;
+				}
+
+				100% {
+					-webkit-transform: translateX(500px);
+					border-left: #000000 1px solid;
+				}
+			}
+
+
+
+			@keyframes fontH1 {
+				0% {
+					-webkit-transform: translateX(0px);
+				}
+
+				100% {
+					-webkit-transform: translateX(-400px);
+				}
+			}
+
+
+			@keyframes zhezhao2 {
+				0% {
+					transform: translateX(0px);
+					opacity: 0.9;
+				}
+
+				99.9% {
+					opacity: 0;
+					transform: translateX(0px);
+				}
+
+				100% {
+					transform: translateX(1920px);
+					opacity: 0;
+				}
+			}
+
+			body {
+
+				height: 1920px;
+			}
+
+
+			#span1 {
+				opacity: 0;
+				margin-left: 50px;
+			}
+
+			#span2 {
+				opacity: 0;
+				margin-left: 50px;
+				font-size: 40px;
+				width: 100%;
+			}
+
+			#span3 {
+				opacity: 0;
+				margin-left: 1000px;
+			}
+
+			#Circletvv {
+				width: 40%;
+				height: 50px;
+			}
+
+			#span2 {
+				position: absolute;
+				text-align: center;
+				width: 100%;
+				top: 4500px;
+				left: 500px;
+			}
+
+			.red {
+				color: #17ffe4;
+			}
+
+			#qianyan {
+				display: none;
+			}
+
+			#ul {
+				display: none;
+			}
+
+			#btn3 {
+				display: none;
+			}
+
+			#banner {
+				width: 100%;
+				background: none;
+				overflow: hidden;
+				margin-top: 100px;
+			}
+
+			#banner ul {
+				width: 3100px;
+			}
+
+			#banner ul li {
+				float: left;
+				width: 360px;
+				margin-left: 20px;
+				height: 360px;
+				object-fit: cover;
+				background-size: 100%;
+			}
+
+			#banner ul li img {
+				width: 360px;
+				height: 360px;
+				list-style: none;
+				margin-left: 20px;
+				display: none;
+			}
+
+
+			#tu1 {
+				background: url(img/gywm5.png);
+				background-size: cover;
+			}
+
+			#tu2 {
+				background: url(img/gywm6.png);
+				background-size: cover;
+			}
+
+			#tu3 {
+				background: url(img/bf3.jpg);
+				background-size: cover;
+			}
+
+			#tu1 div {
+				width: 502px;
+				height: 502px;
+				background-color: #000000;
+				margin-top: 0px;
+				border: #FFFFFF 1px solid;
+				opacity: 0;
+			}
+
+			#tu1 div p {
+				margin-left: 10px;
+				width: 480px;
+				height: 300px;
+				margin-top: 20px;
+			}
+
+			#tu1 div h1 {
+				color: #FFFFFF;
+				margin-left: 50px;
+				width: 140px;
+				margin-top: 40px;
+			}
+
+			#tu1:hover #tutu1 {
+				opacity: 1;
+			}
+
+			#tu {
+				display: none;
+			}
+
+			#tu2 div {
+				width: 502px;
+				height: 502px;
+				background-color: #000000;
+				margin-top: 0px;
+				border: #FFFFFF 1px solid;
+				opacity: 0;
+			}
+
+			#tu2 div p {
+				margin-left: 10px;
+				width: 480px;
+				height: 300px;
+				margin-top: 20px;
+			}
+
+			#tu2 div h1 {
+				color: #FFFFFF;
+				margin-left: 50px;
+				width: 140px;
+				margin-top: 40px;
+			}
+
+			#tu2:hover #tutu2 {
+				opacity: 1;
+			}
+
+			#tu3 div {
+				width: 502px;
+				height: 502px;
+				background-color: #000000;
+				margin-top: 0px;
+				border: #FFFFFF 1px solid;
+				opacity: 0
+			}
+
+			#tu3 div p {
+				margin-left: 10px;
+				width: 480px;
+				height: 300px;
+				margin-top: 20px;
+			}
+
+			#tu3 div h1 {
+				color: #FFFFFF;
+				margin-left: 50px;
+				width: 140px;
+				margin-top: 40px;
+			}
+
+			#tu3:hover #tutu3 {
+				opacity: 1;
+			}
+
+			#tutu1,
+			#tutu2,
+			#tutu3 {
+				transition: 1s ease;
+			}
+
+			#fahui {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="tabs" id="topNew">
+				<div class="selector"></div>
+				<a onclick="window.location = '##' " , href:"###" class="active"><i class="fab fa-superpowers"></i>Circle首页</a>
+				<a onclick="window.location = 'circleshequ.html' " , href:"###"><i class="fas fa-hand-rock"></i>Circle社区</a>
+				<a onclick="window.location = 'shop.html' " , href:"###"><i class="fas fa-bolt"></i>Circle商城</a>
+				<a onclick="window.location = 'circleTv.html' " , href:"###"><i class="fas fa-burn"></i>Circle Tv</a>
+				<a onclick="window.location = 'gywm.html' " , href:"###"><i class="fas fa-burn"></i>关于我们</a>
+			</nav>
+		</div>
+
+		<div id="font">
+			<div id="zhezhao2">
+
+			</div>
+			<h1>让潮流生活更有价值。</h1>
+
+			<div id="zhezhao"></div>
+		</div>
+		<div id="vidioDiv">
+			<p><img src="img/web.png" id="img" /></p>
+
+		</div>
+		<img src="img/shiping.png" id="img2">
+		<div id="shiping" style="height: 655px;position: absolute;top:665px;left: 807px;border-radius:50px;overflow: hidden;"><video
+			 autoplay loop style="height: 640px;">
+				<source src="vidio/RPReplay_Final1610151102(1).MP4" type="video/mp4">
+				Your browser does not support the video tag. I suggest you upgrade your browser.
+			</video></div>
+		<div id="designDraft">
+
+			<div id="circleshequ">
+				<h1 id="h11">加入潮圈</h1>
+				<h1 id="h12">多元文化 肆意玩乐等你加入</h1>
+
+				<h1 id="h13"><a href="circleshequ.html"><button style="width: 200px;background-color: #00EFBF;">查看详情</button></a></h1>
+
+			</div>
+		</div>
+		<div id="one">
+			<div class="one-1" id="circleshop">
+				<h1 id="shopH1">Circle汇集人气时尚<br />潮流品牌</h1>
+				<ul>
+					<li id="li1">精选顶尖潮品汇聚Cirle,潮流热点一网<br>打尽，包括:潮流动向、运动、滑板、<br>娱乐、街拍、音乐、发售、动漫、视频、鞋履、游戏等,让你成为正真的潮<br>流达人。</li>
+					<li id="li2">Circle所售商品皆由品牌官方认证授权，100% 官方品牌;国外潮流新势力品牌快闪!最夯的限定、最稀缺的联名都在这!</li>
+				</ul>
+				<h1 id="btnhua"><a href="shop.html"><button style="width: 200px;background-color: #00EFBF;">查看详情</button></a></h1>
+			</div>
+			<div style="height: 800px;">
+				<img id="shopimg" src="img/5fc8fae155f3b8d76a6d8ef3_homepage-bucket-01.png" /></div>
+			<h2 id="Circletvv" style="font-size:40px;margin-left: 580px;"><span id="span1">除了社区和潮牌，你还能在Circle看到什么？</span></h2>
+			<h2 id="span2">
+				<span class="red">CIRCLE TV</span>,海量潮流前沿视频，不间断供应新鲜的</h2>
+			<h2 id="span3">
+				<span class="red">潮流内容</span>，犹如将世界握在手中。</h2>
+		</div>
+		<div class="one-1" id="circleTv" style="margin-top:300px;margin-bottom: 50px;">
+			<h1 id="qianyan">前沿视频就到<br />CircleTv</h1>
+			<ul id="ul">
+				<li>拥有海量用户上传及CIRCLE自制的亚文化科普视频，让青年文化得到更多人的了解和认同，致力于推动青年文化发展。昨日的小众文化已然成为今天的主流文化，而今天的小众文化靠我们共同推进。</li>
+				<li>不间断供应新鲜的潮流内容，犹如将世界握在手中，你问我流行是什么？
+					——我说就是打开“CIRCLE TV”</li>
+			</ul>
+			<h1 id="btn3"><button style="width: 200px;background-color: #00EFBF;">查看详情</button></h1>
+		</div>
+		<div id="banner">
+			<ul id="chang">
+				<li><img id="imgg1" src="img/bf1.jpg"></li>
+				<li><img id="imgg2" src="img/bf2.jpg"></li>
+				<li><img id="imgg3" src="img/bf3.jpg"></li>
+				<li><img id="imgg4" src="img/bf4.jpg"></li>
+				<li><img id="imgg5" src="img/bf5.jpg"></li>
+				<li><img id="imgg6" src="img/bf6.jpg"></li>
+				<li><img id="imgg7" src="img/bf7.jpg"></li>
+				<li><img id="imgg8" src="img/bf8.jpg"></li>
+			</ul>
+		</div>
+		<div id="vidioMore" style="margin-top: -200px;">
+			<h1 id="fahui">CIRCLEApp</h1>
+			<ul id="tu">
+				<li id="tu1">
+					<div id="tutu1">
+						<h1>文化社区</h1>
+						<p>
+							每一个属于年轻人的关键词，在这里都是有自己圈，说唱、街舞、滑板、涂鸦、电子音乐、摇 滚、穿搭、Tattoo、 美妆、Sneaker、 配饰、艺术、赛博朋克、LGBT等等。我们鼓励圈民在Circle
+							APP上为属于自己的关键词记录、分享和交流，在这个过程中探索属于自己的青年文化符号，遇见志同道合的朋友。</p>
+					</div>
+				</li>
+				<li id="tu2">
+					<div id="tutu2">
+						<h1>潮流商城</h1>
+						<p> 拥有海量用户上传及CIRCLE自制的亚文化科普视频，让青年文化得到更多人的了解和认同，致力于推动青年文化发展。昨日的小众文化已然成为今天的主流文化，而今天的小众文化靠我们共同推进。</p>
+					</div>
+				</li>
+				<li id="tu3">
+					<div id="tutu3">
+						<h1>前沿视频</h1>
+						<p>不间断供应新鲜的潮流内容，犹如将世界握在手中，你问我流行是什么？
+							——我说就是打开“CIRCLE TV”</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="last">
+			<p id="dibu2">沪ICP备 13030189号 Copyright © 2014-2021 行吟信息科技（上海）有限公司| 地址：上海市黄浦区马当路388号C座| 电话：021-64224530| 自营经营者信息|
+				2021 沪公网安备 31010102002533号<br>
+				网络文化经营许可证：沪网文[2018]4086-308号|增值电信业务经营许可证：沪B2-20150021| 网购(订餐)大家评<br>
+				医疗器械经营许可证：沪嘉食药监械经营许20187006号|医疗器械网络交易服务第三方平台备案:（沪）网械平台备字[2019]第00006号|互联网药品信息服务资格证书：(沪)-经营性-2018-0011<br />
+				违法不良信息举报电话：(027) 8700 3878|上海市互联网举报中心|网上有害信息举报专区</p>
+		</div>
+
+
+
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script>
+			var tabs = $('.tabs');
+			var selector = $('.tabs').find('a').length;
+			//var selector = $(".tabs").find(".selector");
+			var activeItem = tabs.find('.active');
+			var activeWidth = activeItem.innerWidth();
+			$(".selector").css({
+				"left": activeItem.position.left + "px",
+				"width": activeWidth + "px"
+			});
+
+			$(".tabs").on("mouseover", "a", function(e) {
+				e.preventDefault();
+				$('.tabs a').removeClass("active");
+				$(this).addClass('active');
+				var activeWidth = $(this).innerWidth();
+				var itemPos = $(this).position();
+				$(".selector").css({
+					"left": itemPos.left + "px",
+					"width": activeWidth + "px"
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			function gouwuche() {
+
+				$('#gouwuche3').css('animation', ' gouwuche 1.5s ease both')
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(window).scroll(function() {
+
+				if ($(document).scrollTop() >= 100) {
+
+					$('#shiping').css('animation', ' img 1.5s ease both');
+					$('#img').css('animation', ' img 1.5s ease both');
+					$('#img2').css('animation', ' img 1.5s ease both');
+					$('#zhezhao2').css('animation', ' zhezhao2 1.5s ease both');
+				}
+				if ($(document).scrollTop() >= 860) {
+					$('#designDraft').css('opacity', ' 1');
+
+
+				}
+				if ($(document).scrollTop() >= 1260) {
+
+					$("#h11").slideDown(1500);
+					$("#h12").slideDown(1500);
+					$("#h13").slideDown(1500);
+				}
+				if ($(document).scrollTop() >= 2260) {
+					$('#shopH1').fadeIn(1000, function() {
+						$('#li1').fadeIn(200, function() {
+
+							$('#btnhua').fadeIn(1000);
+						});
+						$('#li2').fadeIn(250);
+					});
+
+					if ($(document).scrollTop() >= 3200) {
+						$("#shopimg").fadeIn(1800);
+
+					}
+
+					if ($(document).scrollTop() >= 3900) {
+						$("#span1").animate({
+							marginLeft: "0",
+							opacity: "1"
+						}, 1000, function() {
+							$("#span2").animate({
+								marginLeft: "0",
+								opacity: "1",
+								fontSize: "40"
+							}, 500);
+							$("#span3").animate({
+								marginLeft: "700",
+								opacity: "1",
+								fontSize: "40"
+							}, 500, function() {
+								$("#qianyan").slideDown(500, function() {
+									$("#ul").slideDown(500, function() {
+										$("#btn3").fadeIn(1500);
+									});
+								});
+							});
+						});
+					}
+				}
+				if ($(document).scrollTop() >= 4860) {
+					$("#imgg1").show(300, function() {
+						$('#imgg2').show(300, function() {
+							$('#imgg3').show(300, function() {
+								$('#imgg4').show(300, function() {
+									$("#imgg5").show(300, function() {
+										$("#imgg6").show(300, function() {
+											$("#imgg7").show(300, function() {
+												$("#imgg1").show(300);
+											});
+										});
+									});
+								});
+							});
+						});
+					});
+
+				}
+				if ($(document).scrollTop() >= 5400) {
+					$("#fahui").fadeIn(500)
+
+
+				}
+				if ($(document).scrollTop() >= 5800) {
+					$("#tu").fadeIn(500)
+
+
+				}
+				if ($(document).scrollTop() >= $(document).height() - $(window).height()) {;
+				}
+			});
+		</script>
+
+		<script type="text/javascript">
+			var scrolltop = new Array();
+			var index = 0;
+			scrolltop[0] = 0;
+			$(document).scroll(function() {
+				index++;
+				scrolltop[index] = $(document).scrollTop();
+				if (scrolltop[index] > scrolltop[index - 1]) {
+					$('#topNew').css('animation', ' topNew 1.5s ease both');
+				} else {
+					$('#topNew').css('animation', ' topNew2 0.5s ease both');
+				};
+			})
+		</script>
+		<script>
+
+
+		</script>
+	</body>
+</html>

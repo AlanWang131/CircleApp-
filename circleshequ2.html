@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/daohang.css" />
+		<style type="text/css">
+			#l1,
+			#l2,
+			#l3,
+			#l4,
+			#l5,
+			#l6,
+			#l7,
+			#l8,
+			#l9,
+			#l10,
+			#l11,
+			#l12,
+			#l13,
+			#l14,
+			#l15,
+			#l16,
+			#l17,
+			#l18,
+			#l19,
+			#l20 {
+				display: none;
+			}
+
+			/* #nihao{display: none;} */
+			aside {
+				--spacing-offset: 10px;
+				border-top-left-radius: var(--br);
+				border-bottom-left-radius: var(--br);
+				padding: 20px 25px;
+				position: fixed;
+				top: 155px;
+				margin-left: 310px;
+			}
+
+			aside li {
+				color: #ffffff;
+			}
+
+			aside .window-actions {
+				margin: 10px 0 45px var(--spacing-offset);
+			}
+
+			aside .window-actions .window-action {
+				--btn-size: 13px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				background-color: transparent;
+				border: 2px solid rgba(255, 255, 255, 0.6);
+				border-radius: 50%;
+				width: var(--btn-size);
+				height: var(--btn-size);
+				padding: 0;
+				margin-right: 1px;
+				transition: 0.2s;
+				transition-property: background-color, border-color;
+			}
+
+			aside .nav {
+				margin-bottom: 45px;
+				font-size: 14px;
+			}
+
+			aside .nav a {
+				color: #fff;
+				text-decoration: none;
+				display: block;
+				padding: 8px var(--spacing-offset);
+				border-radius: 4px;
+				transition: background-color 0.2s;
+				width: 130px;
+			}
+
+			aside .nav a:hover {
+				background-color: rgba(111, 111, 111, 1.0);
+
+				transition: 0.3s ease;
+			}
+
+			aside .nav>h3 {
+				padding-left: var(--spacing-offset);
+				font-size: 12px;
+				color: rgba(255, 255, 255, 0.7);
+				margin-bottom: 15px;
+			}
+
+			aside .nav>ul li:not(:last-of-type) {
+				margin-bottom: 3px;
+				color: #ffffff;
+			}
+
+			aside .nav>ul .nav-item--selected>a {
+				background-color: rgba(111, 111, 111, 1.0);
+
+			}
+
+			aside .nav.nav--main {
+				font-size: 18px;
+				font-weight: 500;
+				letter-spacing: 0.64px;
+			}
+
+			aside .nav.nav--has-icons {
+				--icon-size: 16px;
+			}
+
+			aside .nav.nav--has-icons>ul li a {
+				display: flex;
+				align-items: center;
+			}
+
+			aside .nav.nav--has-icons>ul li a svg {
+				margin-right: 25px;
+				width: var(--icon-size);
+				height: var(--icon-size);
+				opacity: 0.8;
+			}
+
+
+
+
+			.tabs .selector {
+				height: 100%;
+				display: inline-block;
+				position: absolute;
+				left: 190px;
+				top: 0px;
+				z-index: 1;
+				border-radius: 50px;
+				transition-duration: 0.6s;
+				transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+				background: #09ffb1;
+
+			}
+
+			#dongtai {
+				margin-top: 100px;
+				margin-left: 500px;
+				width: 1060px;
+				color: #FFFFFF;
+			}
+
+			#dongtai li {
+				float: left;
+				margin-left: 30px;
+				background-color: #000000;
+				margin-top: 30px;
+				border-radius: 10px;
+				list-style: none;
+				height: 425px;
+				overflow: hidden;
+				transition: 200ms linear;
+				box-shadow: 2px 2px #09FFB1
+			}
+
+			#dongtai li:hover .img1 {
+				height: 430px;
+			}
+
+			#dongtai li:hover .shuoming {
+				height: 430px;
+			}
+
+			#dongtai img {
+				border-radius: 8px 8px 0 0;
+			}
+
+			#dongtai h1 {
+				width: 200px;
+				font-size: 20px;
+			}
+
+			.touxiang {
+				width: 40px;
+				height: 40px;
+				border-radius: 50px 50px 50px 50px;
+			}
+
+			.img1 {
+				width: 230px;
+				height: 320px;
+				object-fit: cover;
+				transition: 200ms linear;
+			}
+
+			.shuoming {
+				padding: 10px;
+			}
+
+			#touxiang {
+				border-radius: 50px;
+				overflow: hidden;
+				width: 40px;
+				height: 40px;
+				border: #09FFB1 1px solid;
+				margin-top: 10px;
+			}
+
+			.name {
+				margin-top: -30px;
+				margin-left: 70px;
+				padding-bottom: 10px;
+				font-size: 15px;
+			}
+
+			.dianzanimg {
+				width: 10px;
+				height: 10px;
+				margin-top: 0px;
+			}
+
+			.dianzan {
+				margin-top: -27px;
+				margin-bottom: 10px;
+				margin-left: 152px;
+				font-size: 14px;
+			}
+
+			#nihao li {
+				width: 230px;
+				height: 430px;
+			}
+		</style>
+	</head>
+	<body>
+		<aside>
+
+
+			<nav class="nav nav--main">
+				<ul>
+					<li><a href="circleshequ.html">推荐</a></li>
+					<li><a href="#0">热度</a></li>
+					<li><a href="#0">时间</a></li>
+				</ul>
+			</nav>
+
+			<nav class="nav nav--has-icons">
+				<h3>精选</h3>
+
+				<ul>
+					<li class="nav-item--selected"><a href="circleshequ2.html"><i data-feather="clock"></i>美妆</a></li>
+					<li><a href="#0"><i data-feather="disc"></i>日常</a></li>
+					<li><a href="#0"><i data-feather="music"></i>穿搭</a></li>
+
+					<li><a href="#0">朋克</a></li>
+					<li><a href="#0">艺术</a></li>
+					<li><a href="#0">健身</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+
+
+
+		<header>
+			<div>
+				<a><img></a>
+				<div class="wrapper">
+					<nav class="tabs" id="topNew">
+						<div class="selector"></div>
+						<a onclick="window.location = 'index.html' " , href:"###"><i class="fab fa-superpowers"></i>Circle首页</a>
+						<a onclick="window.location = 'circleshequ.html' " , href:"###" class="active"><i class="fas fa-hand-rock"></i>Circle社区</a>
+						<a onclick="window.location = 'shop.html' " , href:"###"><i class="fas fa-bolt"></i>Circle商城</a>
+						<a onclick="window.location = 'circleTv.html' " , href:"###"><i class="fas fa-burn"></i>Circle Tv</a>
+						<a onclick="window.location = 'gywm.html' " , href:"###"><i class="fas fa-burn"></i>关于我们</a>
+					</nav>
+				</div>
+		</header>
+		<div id="dongtai">
+			<ul id="nihao">
+				<li class="l">
+					<div id="l1"><img class="img1" src="img/mz1.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+							</div>
+				</li>
+				<li class="l">
+					<div id="l2"><img class="img1" src="img/mz2.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l3"><a href="3shequ.html"><img class="img1" src="img/mz9.jpg"></a>
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l4"><img class="img1" src="img/mz3.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l5"><img class="img1" src="img/mz4.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l6"><img class="img1" src="img/mz5.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l7"><img class="img1" src="img/mz6.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l8"><img class="img1" src="img/mz7.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l9"><img class="img1" src="img/mz8.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l10"><img class="img1" src="img/mz9.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l11"><img class="img1" src="img/mz10.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l12"><img class="img1" src="img/mz11.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l13"><img class="img1" src="img/mz12.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l14"><img class="img1" src="img/mz13.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l15"><img class="img1" src="img/mz1.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+
+
+				<li class="l">
+					<div id="l16"><img class="img1" src="img/mz2.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l17"><img class="img1" src="img/mz3.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l18"><img class="img1" src="img/mz4.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l19"><img class="img1" src="img/mz5.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+				<li class="l">
+					<div id="l20"><img class="img1" src="img/mz6.jpg">
+						<div class="shuoming">
+							<h1>新年给自己的第一份礼</h1>
+							<div id="shuoming">
+								<div id="touxiang"><img class="touxiang" src="img/dff26e21fff72396744643fb1b07afbf.jpg"></div>
+								<p class="name">Drown</p>
+								<p class="dianzan"><img class="dianzanimg" src="img/dff26e21fff72396744643fb1b07afbf.jpg">1185</p>
+				</li>
+			</ul>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script>
+			var tabs = $('.tabs');
+			var selector = $('.tabs').find('a').length;
+			//var selector = $(".tabs").find(".selector");
+			var activeItem = tabs.find('.active');
+			var activeWidth = activeItem.innerWidth();
+			$(".selector").css({
+				"left": activeItem.position.left + "px",
+				"width": activeWidth + "px"
+			});
+
+			$(".tabs").on("mouseover", "a", function(e) {
+				e.preventDefault();
+				$('.tabs a').removeClass("active");
+				$(this).addClass('active');
+				var activeWidth = $(this).innerWidth();
+				var itemPos = $(this).position();
+				$(".selector").css({
+					"left": itemPos.left + "px",
+					"width": activeWidth + "px"
+				});
+			});
+			$("#l1").show(200, function() {
+				$('#l2').show(200, function() {
+					$('#l3').show(200, function() {
+						$('#l4').show(200, function() {
+
+						});
+					});
+				});
+			});
+			$('#l5').show(300, function() {
+				$('#l6').show(300, function() {
+					$('#l7').show(300, function() {
+						$('#l8').show(300, function() {
+							$('#l').css('');
+						});
+					});
+				});
+			});
+
+			$(window).scroll(function() {
+
+				if ($(document).scrollTop() >= 400) {
+
+
+					$("#l9").show(200, function() {
+						$('#l10').show(200, function() {
+							$('#l11').show(200, function() {
+								$('#l12').show(200, function() {
+
+								});
+							});
+						});
+					});
+					$('#l13').show(300, function() {
+						$('#l14').show(300, function() {
+							$('#l15').show(300, function() {
+								$('#l16').show(300, function() {
+									$('#l').css('');
+								});
+							});
+						});
+					});
+				}
+				if ($(document).scrollTop() >= 1200) {
+
+
+					$("#l17").show(200, function() {
+						$('#l18').show(200, function() {
+							$('#l19').show(200, function() {
+								$('#l20').show(200, function() {
+
+								});
+							});
+						});
+					});
+
+				}
+				if ($(document).scrollTop() >= $(document).height() - $(window).height()) {;
+				}
+			});
+		</script>
+		<script type="text/javascript">
+
+
+
+
+
+		</script>
+	</body>
+
+</html>

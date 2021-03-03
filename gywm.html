@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/daohang.css" />
+		<link rel="stylesheet" type="text/css" href="css/jiazai.css" />
+		<style type="text/css">
+			body {
+				height: 3660px;
+			}
+
+			.tabs .selector {
+				height: 100%;
+				display: inline-block;
+				position: absolute;
+				left: 760px;
+				top: 0px;
+				z-index: 1;
+				border-radius: 50px;
+				transition-duration: 0.6s;
+				transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+				background: #09ffb1;
+
+			}
+
+			body {
+				overflow-x: hidden;
+				width: 1920px;
+			}
+
+			#top {
+				width: 100%;
+				height: 940px;
+				color: #FFFFFF;
+				margin-top: -20px;
+				border: #FFFFFF 1px solid;
+			}
+
+			#top h1 {
+				width: 288px;
+				height: 71px;
+				font-size: 71px;
+				font-family: Microsoft YaHei;
+				font-weight: bold;
+				color: #FFFFFF;
+				line-height: 15px;
+				position: absolute;
+				top: 300px;
+				right: 598px;
+			}
+
+			#logo {
+				width: 67px;
+				height: 56px;
+				position: absolute;
+				right: 507px;
+				top: 280px;
+			}
+
+			#nh {
+				width: 607px;
+				height: 940px;
+				background: url(img/gywm1.png);
+				background-size: 100%;
+			}
+
+			#nh:hover #xia {
+				transform: translateX(-600px);
+			}
+
+			#jvchi {
+				width: 1900px;
+				height: 940px;
+				background: url(img/gywm2.png);
+				position: absolute;
+				top: 0px;
+				margin-left: 407px;
+				background-size: 100%;
+				z-index: 0;
+			}
+
+			#jia {
+				width: 228px;
+				height: 90px;
+				position: absolute;
+				top: 474px;
+				right: 836px;
+			}
+
+			#tiao {
+				width: 235px;
+				height: 62px;
+				position: absolute;
+				top: 580px;
+				right: 833px;
+			}
+
+			#p1 {
+				width: 61px;
+				height: 19px;
+				font-size: 22px;
+				font-family: Adobe Heiti Std;
+				font-weight: bold;
+				color: #FFFFFF;
+				line-height: 20px;
+				position: absolute;
+				top: 546px;
+				right: 573px;
+			}
+
+			#p2 {
+				width: 89px;
+				height: 34px;
+				font-size: 42px;
+				font-family: Adobe Heiti Std;
+				font-weight: bold;
+				color: #FFFFFF;
+				position: absolute;
+				top: 565px;
+				right: 545px;
+			}
+
+			#p3 {
+				font-size: 42px;
+				font-family: Adobe Heiti Std;
+				font-weight: bold;
+				color: #FFFFFF;
+				line-height: 37px;
+				position: absolute;
+				top: 570px;
+				right: 438px;
+			}
+
+			#xian {
+				width: 199px;
+				height: 8px;
+				background-color: #FFFFFF;
+				position: absolute;
+				top: 624px;
+				right: 434px;
+			}
+
+			#jiantou {
+				width: 150px;
+				position: absolute;
+				top: 400px;
+				left: 500px;
+				opacity: 0;
+			}
+
+			#xia {
+				width: 1200px;
+				height: 940px;
+				background: none;
+				position: absolute;
+				top: 0px;
+				margin-left: 507px;
+				background-size: 100%;
+				transition: 500ms linear;
+			}
+
+			#liuyan {
+				margin-left: 150px;
+				width: 400px;
+				height: 300px;
+			}
+
+			#text {
+				width: 80%;
+				height: 150px;
+				background-color: rgba(0, 0, 0, 0.8);
+				border: 3px rgb(9, 255, 177) solid;
+				margin-top: 10px;
+				color: #FFFFFF;
+			}
+
+			#liuyan label {
+				color: rgb(0, 0, 0);
+			}
+
+			#btn {
+				background-color: #09FFB1;
+				border-radius: 50px;
+				border: 1px #000000 solid;
+				width: 100px;
+				height: 30px;
+				margin: 20px 0px;
+			}
+
+			#dier {
+				height: 940px;
+				width: 1920px;
+				border: 1px #FFFFFF solid;
+			}
+
+			.h1 {
+				color: #FFFFFF;
+				margin-top: 160px;
+				margin-left: 880px;
+				font-size: 40px;
+			}
+
+			#dier p {
+				color: #cbcbcb;
+				margin-left: 70px;
+				margin-top: 50px;
+				text-align: center;
+			}
+
+			#tu {
+				height: 350px;
+				width: 720px;
+				margin: 50px 630px;
+			}
+
+			#tu li {
+				width: 240px;
+				height: 350px;
+				float: left;
+				list-style: none;
+			}
+
+			#tu li:hover {
+				opacity: 0.8;
+			}
+
+			#guochang {
+				width: 100%;
+				height: 940px;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				background: #000000;
+				/* animation: likai 1s 0.2s linear both; */
+			}
+
+			#tab-1 {
+				height: 500px;
+			}
+
+			@keyframes jiantou {
+				0% {
+					opacity: 0.8;
+				}
+
+				10% {
+					opacity: 0;
+				}
+
+				12% {
+					opacity: 0.8;
+				}
+
+				20% {
+					opacity: 0;
+				}
+
+				50% {
+					opacity: 1;
+				}
+
+				60% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 0.8;
+				}
+			}
+
+			@keyframes xia {
+				0% {
+					transform: translateX(0px);
+				}
+
+				100% {
+					transform: translateX(-340px);
+				}
+			}
+
+			@keyframes likai {
+				0% {
+					transform: translateY(0px);
+				}
+
+				50% {
+					transform: translateY(0px);
+				}
+
+				100% {
+					transform: translateY(-940px);
+				}
+			}
+
+			#where {
+				color: #FFFFFF;
+				height: 790px;
+			}
+
+			#where h1 {
+				margin-left: 890px;
+				margin-top: 150px;
+			}
+
+			#where p {
+				margin: 20px 795px;
+				width: 400px;
+			}
+
+			#tab-1 {
+				margin: 80px 380px;
+			}
+
+			#guanzhu {
+				height: 700px;
+				width: 100%;
+				margin-top: 300px;
+			}
+
+			#guanzhu ul {
+				width: 800px;
+				height: 300px;
+				margin: 100px 630px;
+			}
+
+			#guanzhu li {
+				float: left;
+				margin-left: 100px;
+				list-style: none;
+				width: 60px;
+			}
+
+			#guanzhu img {
+				width: 90px;
+				height: 90px;
+				object-fit: cover;
+			}
+
+			#guanzhu p {
+				margin-left: -10px;
+			}
+
+			#dibu ul {
+				width: 1500px;
+				margin-left: 500px;
+				margin-top: -220px;
+			}
+
+			#dibu li {
+				float: left;
+				margin-left: 200px;
+				list-style: none;
+			}
+
+			#dibu2 {
+				width: 1920px;
+				color: #FFFFFF;
+				margin-top: 700px;
+				text-align: center;
+				color: #c7c7c7;
+			}
+
+			iframe {
+				display: none;
+			}
+
+			#cir {
+				display: none;
+			}
+
+			#cirp {
+				display: none;
+			}
+
+			#tu {
+				display: none;
+			}
+
+			#where-1 {
+				display: none;
+			}
+
+			#where-2 {
+				display: none;
+			}
+
+			#guanyu {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#jia {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#logo {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#tiao {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#p1 {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#p2 {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#p3 {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#jiantou {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#xian {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			#jvchi {
+				margin-left: 0px;
+			}
+
+			#tu1 {
+				background: url(img/gywm5.png);
+				background-size: cover;
+			}
+
+			#tu2 {
+				background: url(img/gywm6.png);
+				background-size: cover;
+			}
+
+			#tu3 {
+				background: url(img/bf3.jpg);
+				background-size: cover;
+			}
+
+			#tu1 div {
+				width: 240px;
+				height: 350px;
+				background-color: #000000;
+				margin-top: 0px;
+				border: #FFFFFF 1px solid;
+				opacity: 0;
+			}
+
+			#tu1 div p {
+				margin-left: 10px;
+				width: 220px;
+				height: 300px;
+				margin-top: 20px;
+			}
+
+			#tu1 div h1 {
+				color: #FFFFFF;
+				margin-left: 50px;
+				width: 140px;
+				margin-top: 40px;
+			}
+
+			#tu1:hover #tutu1 {
+				opacity: 1;
+			}
+
+
+			#tu2 div {
+				width: 240px;
+				height: 350px;
+				background-color: #000000;
+				margin-top: 0px;
+				border: #FFFFFF 1px solid;
+				opacity: 0;
+			}
+
+			#tu2 div p {
+				margin-left: 10px;
+				width: 220px;
+				height: 300px;
+				margin-top: 20px;
+			}
+
+			#tu2 div h1 {
+				color: #FFFFFF;
+				margin-left: 50px;
+				width: 140px;
+				margin-top: 40px;
+			}
+
+			#tu2:hover #tutu2 {
+				opacity: 1;
+			}
+
+			#tu3 div {
+				width: 240px;
+				height: 350px;
+				background-color: #000000;
+				margin-top: 0px;
+				border: #FFFFFF 1px solid;
+				opacity: 0
+			}
+
+			#tu3 div p {
+				margin-left: 10px;
+				width: 220px;
+				height: 300px;
+				margin-top: 20px;
+			}
+
+			#tu3 div h1 {
+				color: #FFFFFF;
+				margin-left: 50px;
+				width: 140px;
+				margin-top: 40px;
+			}
+
+			#tu3:hover #tutu3 {
+				opacity: 1;
+			}
+
+			#tutu1,
+			#tutu2,
+			#tutu3 {
+				transition: 1s ease;
+			}
+		</style>
+
+	</head>
+	<body>
+		<header>
+			<div>
+
+			</div>
+			<a><img></a>
+			<div class="wrapper">
+				<nav class="tabs" id="topNew">
+					<div class="selector"></div>
+					<a onclick="window.location = 'index.html' " , href:"###"><i class="fab fa-superpowers"></i>Circle首页</a>
+					<a onclick="window.location = 'circleshequ.html' " , href:"###" class="active"><i class="fas fa-hand-rock"></i>Circle社区</a>
+					<a onclick="window.location = 'shop.html' " , href:"###"><i class="fas fa-bolt"></i>Circle商城</a>
+					<a onclick="window.location = 'circleTv.html' " , href:"###"><i class="fas fa-burn"></i>Circle Tv</a>
+					<a onclick="window.location = 'gywm.html' " , href:"###"><i class="fas fa-burn"></i>关于我们</a>
+				</nav>
+			</div>
+		</header>
+		<div id="top">
+			<div id="nh">
+				<div id="xia"><img src="img/huaban.png">
+					<form id="liuyan">
+						<label><b>给我们留言：</b></label><br />
+						<input type="text" id="text"><br />
+						<input id="btn" type="button" onclick="fnsubmit()" value="发表留言" />
+					</form>
+				</div>
+
+
+			</div>
+			<div id="jvchi"></div>
+			<h1 id="guanyu">关于我们</h1>
+
+			<img id="jia" src="./img/gywm4.png">
+			<img id="logo" src="img/logo终稿2.png">
+			<img id="tiao" src="img/gywm3.png">
+			<p id="p1">01/09</p>
+			<p id="p2">2021</p>
+			<p id="p3">启航</p>
+			<div id="xian"></div>
+			<img id="jiantou" src="img/jiantou.png" />
+		</div>
+		<div id="dier">
+			<h1 id="cir" class="h1">什么是Circle</h1>
+			<p id="cirp">Circle青年文化社区以和圈民们一起探索当代青年的多元文化为内核,<br>
+				每一个圈民都是一个自由独立的个体，而圈是由不同的个体聚合的不同场域。<br>
+				记录、分享、交流、思考<br>
+				青年、文化、兴趣、商城<br>
+				小众？No！
+				Yo.很高兴认识你：）</p>
+			<ul id="tu">
+				<li id="tu1">
+					<div id="tutu1">
+						<h1>文化社区</h1>
+						<p>
+							每一个属于年轻人的关键词，在这里都是有自己圈，说唱、街舞、滑板、涂鸦、电子音乐、摇 滚、穿搭、Tattoo、 美妆、Sneaker、 配饰、艺术、赛博朋克、LGBT等等。我们鼓励圈民在Circle
+							APP上为属于自己的关键词记录、分享和交流，在这个过程中探索属于自己的青年文化符号，遇见志同道合的朋友。</p>
+					</div>
+				</li>
+				<li id="tu2">
+					<div id="tutu2">
+						<h1>潮流商城</h1>
+						<p> 拥有海量用户上传及CIRCLE自制的亚文化科普视频，让青年文化得到更多人的了解和认同，致力于推动青年文化发展。昨日的小众文化已然成为今天的主流文化，而今天的小众文化靠我们共同推进。</p>
+					</div>
+				</li>
+				<li id="tu3">
+					<div id="tutu3">
+						<h1>前沿视频</h1>
+						<p>不间断供应新鲜的潮流内容，犹如将世界握在手中，你问我流行是什么？
+							——我说就是打开“CIRCLE TV”</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="where">
+			<h1 id="where-1">我们在这里</h1>
+			<p id="where-2">福建省福州市闽侯县福州软件园软件园大道89号内</p>
+			<div id="tab-1">
+				<iframe src="https://j.map.baidu.com/7f/7naJ" height="500" width="1200" frameborder="0" scrolling="0" onload="nihao()"
+				 allowfullscreenCircle></iframe>
+			</div>
+
+
+			<div id="guanzhu">
+				<h1 class="hh">更多方式关注Circle</h1>
+				<ul>
+					<li><img src="img/erweima.png">
+						<p>下载Circle</p>
+					</li>
+					<li><img src="img/erweima.png">
+						<p>关注Circle微博</p>
+					</li>
+					<li><img src="img/erweima.png">
+						<p>关注Circle公众号</p>
+					</li>
+					<li><img src="img/erweima.png">
+						<p>关注微信小程序</p>
+					</li>
+				</ul>
+			</div>
+			<div id="dibu">
+				<ul>
+					<li>用户协议</li>
+					<li>隐私政策</li>
+					<li>侵权投诉指引</li>
+				</ul>
+
+			</div>
+		</div>
+		<p id="dibu2">沪ICP备 13030189号 Copyright © 2014-2021 行吟信息科技（上海）有限公司| 地址：上海市黄浦区马当路388号C座| 电话：021-64224530| 自营经营者信息|
+			2021 沪公网安备 31010102002533号<br>
+			网络文化经营许可证：沪网文[2018]4086-308号|增值电信业务经营许可证：沪B2-20150021| 网购(订餐)大家评<br>
+			医疗器械经营许可证：沪嘉食药监械经营许20187006号|医疗器械网络交易服务第三方平台备案:（沪）网械平台备字[2019]第00006号|互联网药品信息服务资格证书：(沪)-经营性-2018-0011<br />
+			违法不良信息举报电话：(027) 8700 3878|上海市互联网举报中心|网上有害信息举报专区</p>
+
+
+		<div id="guochang">
+			<div class="blobs">
+				<div class="blob-center"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+				<div class="blob"></div>
+			</div>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+				<defs>
+					<filter id="goo">
+						<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+						<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+						<feBlend in="SourceGraphic" in2="goo" />
+					</filter>
+				</defs>
+			</svg>
+		</div>
+
+
+
+
+
+
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script>
+			function nihao() {
+				$("body , html").animate({
+					scrollTop: 0
+				}, 0);
+				$("#guochang").slideToggle(500, function() {
+
+					$('#jvchi').animate({
+						marginLeft: "400px",
+						opacity: "1"
+					}, 1000, function() {
+						$('#guanyu').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 1000);
+						$('#jia').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 800);
+						$('#logo').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 1000);
+						$('#tiao').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 1000);
+						$('#p1').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 1000);
+						$('#p2').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 1000);
+						$('#p3').animate({
+							marginTop: "0px",
+							opacity: "1"
+						}, 1000);
+						$('#jiantou').animate({
+							opacity: "1"
+						}, 1000, function() {
+
+							$('#xian').animate({
+								marginTop: "0px",
+								opacity: "1"
+							}, 1000);
+
+							$('#jiantou').css("animation", "jiantou 1s 0.2s linear infinite")
+						});
+
+
+					});
+
+
+				})
+
+
+
+			}
+
+
+
+			var tabs = $('.tabs');
+			var selector = $('.tabs').find('a').length;
+			//var selector = $(".tabs").find(".selector");
+			var activeItem = tabs.find('.active');
+			var activeWidth = activeItem.innerWidth();
+			$(".selector").css({
+				"left": activeItem.position.left + "px",
+				"width": activeWidth + "px"
+			});
+
+			$(".tabs").on("mouseover", "a", function(e) {
+				e.preventDefault();
+				$('.tabs a').removeClass("active");
+				$(this).addClass('active');
+				var activeWidth = $(this).innerWidth();
+				var itemPos = $(this).position();
+				$(".selector").css({
+					"left": itemPos.left + "px",
+					"width": activeWidth + "px"
+				});
+			});
+			$(document).on('onclick', '#p1', function() {
+				// $('#top').animate({ scrollTop: 2000 }, 500);
+				console('nihao')
+			});
+			// if ($(document).scrollTop() != 0) {
+			//     //刷新之后，回到顶部
+			//     $('body,html').animate({ scrollTop: 1000 }, 500);
+			// }
+
+			$(document).on('click', '#p1', function() {
+				$('body,html').animate({
+					scrollTop: 940
+				}, 500)
+			});
+			// $(document).on('click','#nh',function () {
+			// 						     $('#xia').animate({ right: 340 }, 500)});
+			// $(document).on('click','#jvchi',function () {
+			// 						     $('#xia').animate({ left: 340 }, 500)});
+			// $(function() {
+			// $("#nh").onclick(function () {
+			// 						    $('#xia').animate({ right: 340 }, 500)})
+			$(document).on('click', '#cir', function() {
+				$('body,html').animate({
+					scrollTop: 1880
+				}, 500)
+			});
+
+			// 								})
+
+			function fnsubmit() {
+				alert('您的留言我们已经收到，祝你生活愉快！')
+			}
+
+			$(document).ready(function() {
+				$(window).scroll(function() {
+
+					if ($(document).scrollTop() >= 2200) {
+
+					}
+					if ($(document).scrollTop() >= 340) {
+						$("#cir").fadeIn(1000, function() {
+							$("#cirp").fadeIn(1200, function() {
+
+							});
+							$("#tu").fadeIn(1200);
+						})
+					}
+					if ($(document).scrollTop() >= 1240) {
+
+						$("#where-1").fadeIn(500, function() {
+							$("#where-2").fadeIn(500, function() {
+								$("iframe").fadeIn(1500);
+							})
+						});
+
+					}
+					if ($(document).scrollTop() >= $(document).height() - $(window).height()) {;
+					}
+				});
+
+
+			});
+		</script>
+	</body>
+
+</html>
